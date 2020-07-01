@@ -1,0 +1,52 @@
+/*
+ * @description Incorrect Block Delimitation
+ *
+ * */
+
+#include "std_testcase.h"
+
+#ifndef OMITBAD
+
+void CWE483_Incorrect_Block_Delimitation__if_without_braces_multiple_lines_01_bad()
+{ 
+    int x,y;
+
+    x = (rand() % 3);
+    y = 0;
+    
+    /* FLAW: forgot to put these two statements within braces
+     * (separate lines, but indentation hints at programmer's intent) */
+    if (x == 0)
+        printLine("x == 0");
+        y = 1;
+        
+    if (y)
+    {
+        printLine("x was 0\n");
+    }
+}
+
+#endif /* OMITBAD */
+
+
+/* Below is the main(). It is only used when building this testcase on
+ * its own for testing or for building a binary to use in testing binary
+ * analysis tools. It is not used when compiling all the testcases as one
+ * application, which is how source code analysis tools are tested. 
+ */
+
+#ifdef INCLUDEMAIN
+
+int main(int argc, char * argv[])
+{
+    /* seed randomness */
+    srand( (unsigned)time(NULL) );
+#ifndef OMITBAD
+    printLine("Calling bad()...");
+    CWE483_Incorrect_Block_Delimitation__if_without_braces_multiple_lines_01_bad();
+    printLine("Finished bad()");
+#endif /* OMITBAD */
+    return 0;
+}
+
+#endif

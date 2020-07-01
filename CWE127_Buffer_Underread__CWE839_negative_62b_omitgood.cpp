@@ -1,0 +1,34 @@
+/* TEMPLATE GENERATED TESTCASE FILE
+Filename: CWE127_Buffer_Underread__CWE839_negative_62b.cpp
+Label Definition File: CWE127_Buffer_Underread__CWE839.label.xml
+Template File: sources-sinks-62b.tmpl.cpp
+*/
+/*
+ * @description
+ * CWE: 127 Buffer Underread
+ * BadSource: negative Negative index value
+ * GoodSource: Non-negative but less than 10
+ * Sinks:
+ *    GoodSink: Ensure the array index is valid
+ *    BadSink : Improperly check the array index by not checking to see if the value is negative
+ * Flow Variant: 62 Data flow: data flows using a C++ reference from one function to another in different source files
+ *
+ * */
+
+#include "std_testcase.h"
+
+namespace CWE127_Buffer_Underread__CWE839_negative_62
+{
+
+#ifndef OMITBAD
+
+void badSource(int &data)
+{
+    /* POTENTIAL FLAW: Use an invalid index */
+    data = -5;
+}
+
+#endif /* OMITBAD */
+
+
+} /* close namespace */

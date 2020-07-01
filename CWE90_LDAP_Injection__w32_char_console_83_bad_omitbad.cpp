@@ -1,0 +1,15 @@
+/* TEMPLATE GENERATED TESTCASE FILE
+Filename: CWE90_LDAP_Injection__w32_char_console_83_bad.cpp
+Label Definition File: CWE90_LDAP_Injection__w32.label.xml
+Template File: sources-sink-83_bad.tmpl.cpp
+*/
+/*
+ * @description
+ * CWE: 90 LDAP Injection
+ * BadSource: console Read input from the console
+ * GoodSource: Use a fixed string
+ * Sinks:
+ *    BadSink : data concatenated into LDAP search, which could result in LDAP Injection
+ * Flow Variant: 83 Data flow: data passed to class constructor and destructor by declaring the class object on the stack
+ *
+ * */

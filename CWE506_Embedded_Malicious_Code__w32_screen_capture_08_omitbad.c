@@ -1,0 +1,45 @@
+/* TEMPLATE GENERATED TESTCASE FILE
+Filename: CWE506_Embedded_Malicious_Code__w32_screen_capture_08.c
+Label Definition File: CWE506_Embedded_Malicious_Code__w32.badonly.label.xml
+Template File: point-flaw-badonly-08.tmpl.c
+*/
+/*
+ * @description
+ * CWE: 506 Embedded Malicious Code
+ * Sinks: screen_capture
+ *    BadSink : Capture the screen and save it to a file
+ *      BadOnly (No GoodSink)
+ * Flow Variant: 08 Control flow: if(staticReturnsTrue())
+ *
+ * */
+
+#include "std_testcase.h"
+
+#include "windows.h"
+#pragma comment(lib, "user32.lib")
+#pragma comment(lib, "Gdi32.lib")
+
+/* The function below always return the same value, so a tool
+   should be able to identify that calls to this function will always
+   return a fixed value. */
+static int staticReturnsTrue()
+{
+    return 1;
+}
+
+
+/* Below is the main(). It is only used when building this testcase on
+   its own for testing or for building a binary to use in testing binary
+   analysis tools. It is not used when compiling all the testcases as one
+   application, which is how source code analysis tools are tested. */
+
+#ifdef INCLUDEMAIN
+
+int main(int argc, char * argv[])
+{
+    /* seed randomness */
+    srand( (unsigned)time(NULL) );
+    return 0;
+}
+
+#endif

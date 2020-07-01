@@ -1,0 +1,15 @@
+/* TEMPLATE GENERATED TESTCASE FILE
+Filename: CWE563_Unused_Variable__unused_uninit_variable_long_84_bad.cpp
+Label Definition File: CWE563_Unused_Variable__unused_uninit_variable.label.xml
+Template File: source-sinks-84_bad.tmpl.cpp
+*/
+/*
+ * @description
+ * CWE: 563 Unused Variable
+ * BadSource:  Initialize data
+ * Sinks:
+ *    GoodSink: Initialize, then use data
+ *    BadSink : Do nothing
+ * Flow Variant: 84 Data flow: data passed to class constructor and destructor by declaring the class object on the heap and deleting it after use
+ *
+ * */
